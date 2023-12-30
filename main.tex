@@ -168,12 +168,13 @@ $$
 \begin{tikzpicture}
 \node [mybox] (box){%
     \begin{minipage}{0.3\textwidth}
-An object's moment of inertia is analogous to its mass in the context of rotation, but, unlike mass, it depends on the distance from the center of rotation. Let's start with a point particle of mass $m$ : the moment of inertia scales with the radius as
+An object's moment of inertia is analogous to its mass in the context of rotation, but, it depends on the distance from the center of rotation.\\
+For \textbf{point particles} of mass $m_i$, the moment of inertia is given by
 $$
-I=m r^2
+I=\sum_i m_i r_i^2
 $$
 
-We can generalize to extended objects with arbitrary mass distributions by integrating:
+We can generalize to \textbf{extended objects} with arbitrary mass distributions by integrating:
 $$
 I=\int r^2 d m
 $$
@@ -218,9 +219,9 @@ $$
 \end{aligned}
 $$
 
-$$
-\mathbf{F}_{\text {grav }}=\frac{G m_1 m_2}{r^2} \hat{\mathbf{r}}
-$$
+%$$
+%\mathbf{F}_{\text {grav }}=\frac{G m_1 m_2}{r^2} \hat{\mathbf{r}}
+%$$
 
 For any conservative force $\mathbf{F}$, the change in potential energy $\Delta U$ between points $a$ and $b$ is
 $$
