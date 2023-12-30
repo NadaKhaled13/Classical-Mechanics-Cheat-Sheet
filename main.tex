@@ -48,33 +48,161 @@
 \begin{tikzpicture}
 \node [mybox] (box){%
     \begin{minipage}{0.3\textwidth}
-$$
-x(t)=v_{0 x} t+x_0, \quad y(t)=-\frac{1}{2} g t^2+v_{0 y} t+y_0
-$$
-$$
-v_f^2-v_i^2=2 a \Delta x
-$$
+%$$
+%x(t)=v_{0 x} t+x_0, \quad y(t)=-\frac{1}{2} g t^2+v_{0 y} t+y_0
+%$$
+%$$
+%v_f^2-v_i^2=2 a \Delta x
+%$$
+Equations of Motion for \textbf{Constant Linear Acceleration}\\
+\[
+\begin{aligned}
+&\begin{array}{cl}
+\hline \text{Linear Equation} & \text{Missing Variable} \\
+\hline v=v_0+at & x-x_0 \\
+x-x_0=v_0 t+\frac{1}{2} a t^2 & v \\
+x-x_0=\frac{1}{2}(v_0+v)t & a \\
+v^2=v_0^2+2a(x-x_0) & t \\
+x-x_0=vt-\frac{1}{2} a t^2 & v_0 \\
+\hline
+\end{array}
+\end{aligned}
+\]
+Equations of Motion for \textbf{Constant Angular Acceleration}
+\[
+\begin{aligned}
+&\begin{array}{cl}
+\hline \text{Angular Equation} & \text{Missing Variable} \\
+\hline \omega=\omega_0+\alpha t & \theta-\theta_0 \\
+\theta-\theta_0=\omega_0 t+\frac{1}{2} \alpha t^2 & \omega \\
+\theta-\theta_0=\frac{1}{2}(\omega_0+\omega)t & \alpha \\
+\omega^2=\omega_0^2+2\alpha(\theta-\theta_0) & t \\
+\theta-\theta_0=\omega t-\frac{1}{2} \alpha t^2 & \omega_0 \\
+\hline
+\end{array}
+\end{aligned}
+\]
+
     \end{minipage}
 };
-%------------ Heating Header ---------------------
+%------------ Kinematics Header ---------------------
 \node[fancytitle, right=10pt] at (box.north west) {Kinematics};
 \end{tikzpicture}
 
-%------------ Circular Motion ---------------
+%------------ Rotational Motion ---------------
 \begin{tikzpicture}
 \node [mybox] (box){%
     \begin{minipage}{0.3\textwidth}
+    \begin{itemize}
+        \item Rotational angle $\theta$
+    \end{itemize}
+    $$
+\theta=\frac{s}{r} \quad \text { (radian measure) }
 $$
-a=\frac{v^2}{r}
+where $s$ is the arc length of a circular path of radius $r$ and angle $\theta$.
+%$$
+\begin{itemize}
+    \item Angular velocity $\omega$ (instantaneous)
+\end{itemize}
 $$
+\omega=\frac{d \theta}{d t} .
 $$
-F=\frac{m v^2}{r}
+$\omega$ is a vector, with directions given by a right-hand rule. They are positive for counterclockwise rotation.
+\begin{itemize}
+    \item Angular acceleration $\alpha$ (instantaneous)
+\end{itemize}
+$$
+\alpha=\frac{d \omega}{d t} .
 $$
     \end{minipage}
 };
-%------------ Circular Motion Header ---------------------
-\node[fancytitle, right=10pt] at (box.north west) {Circular Motion};
+%------------ Rotational Motion Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Rotational Motion};
 \end{tikzpicture}
+
+
+%------------ Relation between linear and angular variables Motion ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+%A point in a rigid rotating body, at a perpendicular distance $r$ from the rotation axis, moves in a circle with radius $r$. 
+In case of rolling without slipping. 
+If the body rotates through an angle $\theta$, the point moves along an arc with length $s$ given by
+$$
+s=\theta r \quad \text { (radian measure), }
+$$
+%where $\theta$ is in radians.
+The linear velocity $\vec{v}$ 
+%of the point 
+is tangent to the circle; the point's linear speed $v$ is given by
+$$
+v=\omega r \quad \text { (radian measure), }
+$$
+where $\omega$ is the angular speed (in radians per second).\\
+%of the body, and thus also the point.
+The linear acceleration $\vec{a}$ of the point has both tangential and radial components. The tangential component is
+$$
+a_t=\alpha r \quad \text { (radian measure), }
+$$
+where $\alpha$ is the magnitude of the angular acceleration (in radians per second-squared)
+%of the body. 
+The radial component of $\vec{a}$ is
+$$
+a_r=\frac{v^2}{r}=\omega^2 r \quad \text { (radian measure). }
+$$
+If the point moves in uniform circular motion, the tangential acceleration is zero so the force will be 
+$$
+F= m a_r = \frac{m v^2}{r}
+$$
+the period $T$ of the motion is 
+$$
+T=\frac{2 \pi r}{v}=\frac{2 \pi}{\omega} \quad \text { (radian measure). }
+$$
+    \end{minipage}
+};
+
+%------------ Relation between linear and angular variables Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Relation between linear and angular variables};
+\end{tikzpicture}
+
+%------------  Moment of Inertia Content ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+An object's moment of inertia is analogous to its mass in the context of rotation, but, unlike mass, it depends on the distance from the center of rotation. Let's start with a point particle of mass $m$ : the moment of inertia scales with the radius as
+$$
+I=m r^2
+$$
+
+We can generalize to extended objects with arbitrary mass distributions by integrating:
+$$
+I=\int r^2 d m
+$$
+\textbf{Parallel-axis theorem:}
+If we know the moment of inertia $I$ of a system of mass $M$ rotating about an axis through its center of mass (CM), then its moment of inertia about any axis parallel to the $\mathrm{CM}$ axis is given by
+$$
+I=I_{\mathrm{CM}}+M h^2,
+$$
+Where h is the distance between the CM axis and the parallel axis.
+    \end{minipage}
+};
+%------------  Moment of Inertia Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) { Moment of Inertia};
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 %------------ Energy ---------------
 \begin{tikzpicture}
@@ -114,7 +242,7 @@ $$
     \begin{minipage}{0.3\textwidth}
 If the object (sphere, cylinder, and so forth) rolls without slipping, then its linear velocity $v$ and angular velocity $\omega$ are related by
 $$
-v=R \omega,
+v_{com}=R \omega,
 $$
     \end{minipage}
 };
@@ -185,33 +313,6 @@ $$
 };
 %------------ Rotational Motion and Angular Momentum Header ---------------------
 \node[fancytitle, right=10pt] at (box.north west) {Rotational Motion and Angular Momentum};
-\end{tikzpicture}
-
-%------------  Moment of Inertia Content ---------------
-\begin{tikzpicture}
-\node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
-An object's moment of inertia is analogous to its mass in the context of rotation, but, unlike mass, it depends on the distance from the center of rotation. Let's start with a point particle of mass $m$ : the moment of inertia scales with the radius as
-$$
-I=m r^2
-$$
-As we've seen, an object's moment of inertia is analogous to its mass in the context of rotation, but, unlike mass, it depends on the distance from the center of rotation. Let's start with a point particle of mass $m$ : the moment of inertia scales with the radius as
-$$
-I=m r^2
-$$
-We can generalize to extended objects with arbitrary mass distributions by integrating:
-$$
-I=\int r^2 d m
-$$
-If we know the moment of inertia $I$ of a system of mass $M$ rotating about an axis through its center of mass (CM), then its moment of inertia about any axis parallel to the $\mathrm{CM}$ axis is given by
-$$
-I=I_{\mathrm{CM}}+M r^2,
-$$
-Where r is the distance between the CM axis and the parallel axis.
-    \end{minipage}
-};
-%------------  Moment of Inertia Header ---------------------
-\node[fancytitle, right=10pt] at (box.north west) { Moment of Inertia};
 \end{tikzpicture}
 
 %------------ Center of Mass Content ---------------
