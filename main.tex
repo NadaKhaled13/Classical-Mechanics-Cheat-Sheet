@@ -191,50 +191,25 @@ Where h is the distance between the CM axis and the parallel axis.
 \end{tikzpicture}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-%------------ Energy ---------------
+%------------ Center of Mass Content ---------------
 \begin{tikzpicture}
 \node [mybox] (box){%
     \begin{minipage}{0.3\textwidth}
-\textit{If an object is acted on only by conservative forces, the sum of its kinetic and potential energies is constant along the object’s path.}\\\\
-You should know the following formulas cold:
-$$
-\begin{aligned}
-&\text { Translational kinetic energy: }  \frac{1}{2} m v^2 \\
-&\text { Rotational kinetic energy: }  \frac{1}{2} I \omega^2 \\
-&\text { Gravitational potential energy on Earth: }  m g h \\
-&\text { Spring potential energy: }  \frac{1}{2} k x^2
-\end{aligned}
-$$
-
-%$$
-%\mathbf{F}_{\text {grav }}=\frac{G m_1 m_2}{r^2} \hat{\mathbf{r}}
-%$$
-
-For any conservative force $\mathbf{F}$, the change in potential energy $\Delta U$ between points $a$ and $b$ is
-$$
-\Delta U=-\int_a^b \mathbf{F} \cdot d \mathbf{l}
-$$
-$$
-\mathbf{F}=-\nabla U
-$$
+$\mathbf{r}_{\mathrm{CM}}=\frac{\int \mathbf{r} d m}{M}$ and 
+$\mathbf{r}_{\mathrm{CM}}=\frac{\sum_i \mathbf{r}_i m_i}{M}$
     \end{minipage}
 };
-%------------ Energy Header ---------------------
-\node[fancytitle, right=10pt] at (box.north west) {Energy};
+%------------ Center of Mass Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Center of Mass};
 \end{tikzpicture}
+
+
+
+
+
+
+
+
 
 %------------ Rolling Without Slipping ---------------
 \begin{tikzpicture}
@@ -248,28 +223,6 @@ $$
 };
 %------------ Rolling Without Slipping ---------------------
 \node[fancytitle, right=10pt] at (box.north west) {Rolling Without Slipping};
-\end{tikzpicture}
-%------------ Work–Energy Theorem Content ---------------------
-\begin{tikzpicture}
-\node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
-    To quantify the effects of nonconservative forces such as friction: 
-$$
-E_{\text {initial }}+W_{\text {other }}=E_{\text {final }} \text {, }
-$$
-where $W_{\text {other }}$ is the work due to nonconservative forces.
-$$
-W=\Delta \mathrm{KE}
-$$
-Here W is the work done by all forces, including the conservative ones. \\\\
-The general definition of work:
-$$
-W=\int \mathbf{F} \cdot d \mathbf{l}
-$$
-    \end{minipage}
-};
-%------------ Work–Energy Theorem Header ---------------------
-\node[fancytitle, right=10pt] at (box.north west) {Work–Energy Theorem};
 \end{tikzpicture}
 
 %------------ Momentum Content ---------------
@@ -315,18 +268,112 @@ $$
 \node[fancytitle, right=10pt] at (box.north west) {Rotational Motion and Angular Momentum};
 \end{tikzpicture}
 
-%------------ Center of Mass Content ---------------
+
+
+
+%------------ Summary rotation vs. translation Content ---------------
 \begin{tikzpicture}
 \node [mybox] (box){%
     \begin{minipage}{0.3\textwidth}
-$\mathbf{r}_{\mathrm{CM}}=\frac{\int \mathbf{r} d m}{M}$ and 
-$\mathbf{r}_{\mathrm{CM}}=\frac{\sum_i \mathbf{r}_i m_i}{M}$
+\begin{tabular}{ll}
+\multicolumn{2}{c}{Pure \textbf{Translation} (Fixed Direction)} \\
+\hline Position & \(x\) \\
+Velocity & \(v=\frac{d x}{d t}\) \\
+Acceleration & \(a=\frac{d v}{d t}\) \\
+Mass & \(m\) \\
+Newton's second law & \(F_{\text{net}}=m a\) \\
+Work & \(W=\int F d x\) \\
+Kinetic energy & \(K=\frac{1}{2} m v^2\) \\
+Power (constant force) & \(P=F v\) \\
+Work-kinetic energy theorem & \(W=\Delta K\) \\
+\end{tabular}
+
+\begin{tabular}{ll}
+\multicolumn{2}{c}{Pure \textbf{Rotation} (Fixed Axis)} \\
+\hline Angular position & \(\theta\) \\
+Angular velocity & \(\omega=\frac{d \theta}{d t}\) \\
+Angular acceleration & \(\alpha=\frac{d \omega}{d t}\) \\
+Rotational inertia & \(I\) \\
+Newton's second law & \(\tau_{\text{net}}=I \alpha\) \\
+Work & \(W=\int \tau d \theta\) \\
+Kinetic energy & \(K=\frac{1}{2} I \omega^2\) \\
+Power (constant torque) & \(P=\tau \omega\) \\
+Work-kinetic energy theorem & \(W=\Delta K\) \\
+\end{tabular}
+
     \end{minipage}
 };
-%------------ Center of Mass Header ---------------------
-\node[fancytitle, right=10pt] at (box.north west) {Center of Mass};
+%------------ Summary rotation vs. translation Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Rotational vs. translational};
 \end{tikzpicture}
-\
+
+
+
+
+
+
+%------------ Energy ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+\textit{If an object is acted on only by conservative forces, the sum of its kinetic and potential energies is constant along the object’s path.}\\\\
+You should know the following formulas cold:
+$$
+\begin{aligned}
+&\text { Translational kinetic energy: }  \frac{1}{2} m v^2 \\
+&\text { Rotational kinetic energy: }  \frac{1}{2} I \omega^2 \\
+&\text { Gravitational potential energy on Earth: }  m g h \\
+&\text { Spring potential energy: }  \frac{1}{2} k x^2
+\end{aligned}
+$$
+
+%$$
+%\mathbf{F}_{\text {grav }}=\frac{G m_1 m_2}{r^2} \hat{\mathbf{r}}
+%$$
+
+For any conservative force $\mathbf{F}$, the change in potential energy $\Delta U$ between points $a$ and $b$ is
+$$
+\Delta U=-\int_a^b \mathbf{F} \cdot d \mathbf{l}
+$$
+$$
+\mathbf{F}=-\nabla U
+$$
+    \end{minipage}
+};
+%------------ Energy Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Energy};
+\end{tikzpicture}
+
+
+
+%------------ Work–Energy Theorem Content ---------------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+    To quantify the effects of nonconservative forces such as friction: 
+$$
+E_{\text {initial }}+W_{\text {other }}=E_{\text {final }} \text {, }
+$$
+where $W_{\text {other }}$ is the work due to nonconservative forces.
+$$
+W=\Delta \mathrm{KE}
+$$
+Here W is the work done by all forces, including the conservative ones. \\\\
+The general definition of work:
+$$
+W=\int \mathbf{F} \cdot d \mathbf{l}
+$$
+    \end{minipage}
+};
+%------------ Work–Energy Theorem Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Work–Energy Theorem};
+\end{tikzpicture}
+
+
+
+
+
+
 %------------ Lagrangians Content ---------------
 \begin{tikzpicture}
 \node [mybox] (box){%
